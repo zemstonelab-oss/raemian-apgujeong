@@ -1,31 +1,22 @@
-"use client";
-
-import S1Hero from "@/components/S1Hero";
-import S2History from "@/components/S2History";
-import S3Gallery from "@/components/S3Gallery";
-import S4WorldClass from "@/components/S4WorldClass";
-import S5Features from "@/components/S5Features";
-import S6Landmark from "@/components/S6Landmark";
-import S7Overseas from "@/components/S7Overseas";
-import S8Samsung from "@/components/S8Samsung";
-import S9Design from "@/components/S9Design";
-import S10Outro from "@/components/S10Outro";
+import Link from "next/link";
+import { projects } from "@/data/projects";
 
 export default function Home() {
   return (
-    <main className="max-w-[880px] mx-auto min-h-screen">
-      <S1Hero />
-      <S2History />
-      <S3Gallery />
-      <div className="relative">
-        <S4WorldClass />
-        <S5Features />
+    <main className="max-w-[880px] mx-auto min-h-screen flex flex-col items-center justify-center gap-[2rem] p-[2rem]">
+      <h1 className="text-[3rem] font-bold">래미안 프로모션</h1>
+      <div className="flex flex-col gap-[1rem] w-full max-w-[40rem]">
+        {projects.map((project) => (
+          <Link
+            key={project.slug}
+            href={`/${project.slug}`}
+            className="block p-[2rem] border border-[#E6E6E6] rounded-[1rem] hover:shadow-lg transition-shadow"
+          >
+            <div className="text-[2rem] font-semibold">{project.meta.title}</div>
+            <div className="text-[1.4rem] opacity-50 mt-[0.5rem]">{project.meta.description}</div>
+          </Link>
+        ))}
       </div>
-      <S6Landmark />
-      <S7Overseas />
-      <S8Samsung />
-      <S9Design />
-      <S10Outro />
     </main>
   );
 }
