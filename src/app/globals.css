@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+
+:root {
+  --fcp: #AF8664;
+  --fcs: #009DAD;
+  --fcf: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Pretendard Variable", "Pretendard", sans-serif;
+  color: #000;
+  line-height: 1.3;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* KoPub Batang - using Google Fonts CDN alternative or local */
+@font-face {
+  font-family: 'KoPub Batang';
+  font-weight: 300;
+  src: url('https://cdn.jsdelivr.net/gh/niceplugin/KoPubWorldBatang/KoPubWorld%20Batang%20Light.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'KoPub Batang';
+  font-weight: 500;
+  src: url('https://cdn.jsdelivr.net/gh/niceplugin/KoPubWorldBatang/KoPubWorld%20Batang%20Medium.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'KoPub Batang';
+  font-weight: 700;
+  src: url('https://cdn.jsdelivr.net/gh/niceplugin/KoPubWorldBatang/KoPubWorld%20Batang%20Bold.woff2') format('woff2');
+  font-display: swap;
+}
+
+.kb {
+  font-family: 'KoPub Batang', serif;
+}
+
+.ot {
+  font-family: 'OptimaLTStd', 'Optima', serif;
+}
+
+/* Swiper overrides */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none !important;
+}
+
+@keyframes scroll-down {
+  0% { margin-bottom: -0.6rem; }
+  100% { margin-bottom: 0; }
+}
+
+@keyframes scroll-bounce {
+  0% { margin-bottom: -1rem; }
+  100% { margin-bottom: 0; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
